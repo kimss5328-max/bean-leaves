@@ -127,7 +127,7 @@ python -m tools.measure_timings --repeat 5 # 실환경 성능 측정 (서버·Wo
 | `tools/` | 선택 실험·측정 스크립트 (제공 코드 아님) |
 | `training/finetune_fusion.py` | 원본 `finetune.py` + 융합 평가 (선택 실험용, 원본 코드 구역은 동일) |
 
-> **Git 제외:** `*.csv`, `*.json`, 이미지(`*.png` 등)는 `.gitignore`로 제외하였다. 따라서 `reports/data/`, `reports/evidence/`, `reports/figures/`의 링크는 GitHub에서 열리지 않으며, 압축 파일로 별도 제출한다.
+> **Git 포함 범위:** 저장소 전체에서 `*.csv`, `*.json`, 이미지는 제외하되, `reports/` 아래의 증빙·측정 원본·도표는 예외로 포함하였다 (`.gitignore`의 `!reports/**` 규칙).
 
 ## 9. 제공 코드 사용 원칙
 
