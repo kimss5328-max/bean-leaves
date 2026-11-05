@@ -237,7 +237,7 @@ echo "MODEL_PATH=artifacts/beans_resnet18" > .env
 1. **재현성:** 동일 seed(42)에서도 3 epoch 시점 정확도가 실행 A 0.8421, 실행 B 0.7669로 달랐다. 학습이 GPU(CUDA)에서 실행되었고, 제공 코드는 `torch.manual_seed`만 고정할 뿐 cuDNN 연산의 비결정성(`torch.backends.cudnn.deterministic`)은 고정하지 않으므로 이것이 원인으로 추정된다 (미검증). 두 결과의 차이를 **epoch 증가만의 효과로 단정하지 않는다.**
 2. **Validation 선택 편향:** Validation으로 최고 epoch을 골랐으므로 0.9549는 낙관적일 수 있다.
 3. **Validation과 Test의 차이:** Test 정확도(0.8984)가 Validation(0.9549)보다 5.65%p 낮다. Validation 기준 epoch 선택의 낙관 편향이 확인되었다 (3-5절).
-4. **학습 범위:** Backbone 고정. Full Fine-tuning은 수행하지 않았다.
+4. **학습 범위:** 서비스 모델은 Backbone 고정(Head-only)이다. Full Fine-tuning은 선택 실험으로 별도 수행하였고 서비스에는 연결하지 않았다 ([보고서 10](10_실험_CNN_잎마스크_융합.md) 6장).
 
 **추가 실험** (선택, 별도 보고서)
 - 배경을 지운 이미지로 같은 조건 학습 → Val 0.9398. CNN이 배경에 의존하지 않음을 확인 ([보고서 10](10_실험_CNN_잎마스크_융합.md))
