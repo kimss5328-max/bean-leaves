@@ -71,3 +71,8 @@ __pycache__/
 
 media/jobs/*
 !media/jobs/.gitkeep
+
+   # .gitignore 맨 아래에 추가
+   !reports/**/*.csv
+   !reports/**/*.json
+   !reports/**/*.png
