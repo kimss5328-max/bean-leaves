@@ -1,0 +1,122 @@
+[
+  {
+    "file": "dataset/val/healthy/healthy_val.0.jpg",
+    "method": "grabcut",
+    "otsu_a": 131,
+    "fallback_full": false,
+    "area_ratio": 0.2615,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.1.jpg",
+    "method": "grabcut",
+    "otsu_a": 126,
+    "fallback_full": false,
+    "area_ratio": 0.4173,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.10.jpg",
+    "method": "grabcut",
+    "otsu_a": 127,
+    "fallback_full": false,
+    "area_ratio": 0.5235,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.11.jpg",
+    "method": "grabcut",
+    "otsu_a": 124,
+    "fallback_full": false,
+    "area_ratio": 0.5735,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.12.jpg",
+    "method": "grabcut",
+    "otsu_a": 101,
+    "fallback_full": false,
+    "area_ratio": 0.5853,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.13.jpg",
+    "method": "grabcut",
+    "otsu_a": 96,
+    "fallback_full": false,
+    "area_ratio": 0.7152,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.14.jpg",
+    "method": "grabcut",
+    "otsu_a": 121,
+    "fallback_full": false,
+    "area_ratio": 0.4248,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.15.jpg",
+    "method": "grabcut",
+    "otsu_a": 110,
+    "fallback_full": false,
+    "area_ratio": 0.4682,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.16.jpg",
+    "method": "grabcut",
+    "otsu_a": 108,
+    "fallback_full": false,
+    "area_ratio": 0.5224,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.17.jpg",
+    "method": "grabcut",
+    "otsu_a": 126,
+    "fallback_full": false,
+    "area_ratio": 0.6502,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.18.jpg",
+    "method": "grabcut",
+    "otsu_a": 110,
+    "fallback_full": false,
+    "area_ratio": 0.3441,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.19.jpg",
+    "method": "grabcut",
+    "otsu_a": 109,
+    "fallback_full": false,
+    "area_ratio": 0.5299,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.2.jpg",
+    "method": "grabcut",
+    "otsu_a": 130,
+    "fallback_full": false,
+    "area_ratio": 0.6171,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.20.jpg",
+    "method": "grabcut",
+    "otsu_a": 107,
+    "fallback_full": false,
+    "area_ratio": 0.5379,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.21.jpg",
+    "method": "grabcut",
+    "otsu_a": 103,
+    "fallback_full": false,
+    "area_ratio": 0.5941,
+    "leaves": 1
+  }
+]

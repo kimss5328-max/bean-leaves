@@ -1,0 +1,106 @@
+{
+  "cnn_file": "reports/data/cnn_probs_beans_resnet18.csv",
+  "color_file": "reports/data/color_features_leaf.csv",
+  "dropped": [
+    "focus_sharpness_mean",
+    "mask_area_ratio"
+  ],
+  "scheme": "Validation 5겹 교차검증",
+  "classes": [
+    "angular_leaf_spot",
+    "bean_rust",
+    "healthy"
+  ],
+  "results": {
+    "A_cnn": {
+      "accuracy": 0.8421,
+      "correct": 112,
+      "total": 133,
+      "binary_accuracy": 0.9248,
+      "disease_type_accuracy": 0.8652,
+      "disease_type_confusions": 11,
+      "sick_to_healthy": 1,
+      "healthy_to_sick": 9,
+      "confusion_matrix": [
+        [
+          39,
+          4,
+          1
+        ],
+        [
+          7,
+          38,
+          0
+        ],
+        [
+          5,
+          4,
+          35
+        ]
+      ]
+    },
+    "B_color": {
+      "accuracy": 0.7143,
+      "correct": 95,
+      "total": 133,
+      "binary_accuracy": 0.8571,
+      "disease_type_accuracy": 0.6742,
+      "disease_type_confusions": 19,
+      "sick_to_healthy": 10,
+      "healthy_to_sick": 9,
+      "confusion_matrix": [
+        [
+          28,
+          9,
+          7
+        ],
+        [
+          10,
+          32,
+          3
+        ],
+        [
+          2,
+          7,
+          35
+        ]
+      ]
+    },
+    "C_rule": {
+      "flagged": 19,
+      "flag_rate": 0.1429,
+      "cnn_errors_total": 21,
+      "cnn_errors_caught": 6,
+      "correct_flagged": 13,
+      "accuracy_on_kept": 0.8684,
+      "kept": 114
+    },
+    "D_fusion": {
+      "accuracy": 0.8271,
+      "correct": 110,
+      "total": 133,
+      "binary_accuracy": 0.9098,
+      "disease_type_accuracy": 0.8315,
+      "disease_type_confusions": 11,
+      "sick_to_healthy": 4,
+      "healthy_to_sick": 8,
+      "confusion_matrix": [
+        [
+          37,
+          4,
+          3
+        ],
+        [
+          7,
+          37,
+          1
+        ],
+        [
+          3,
+          5,
+          36
+        ]
+      ]
+    }
+  }
+}

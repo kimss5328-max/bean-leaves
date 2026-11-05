@@ -1,0 +1,9 @@
+[
+  {
+    "file": "dataset/val/healthy/healthy_val.0.jpg",
+    "focus_found": true,
+    "otsu_threshold": 163,
+    "contours": 5,
+    "area_ratio": 0.6882
+  }
+]

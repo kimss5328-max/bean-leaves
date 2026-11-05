@@ -1,0 +1,37 @@
+[
+  {
+    "file": "dataset/val/healthy/healthy_val.0.jpg",
+    "focus_found": true,
+    "otsu_threshold": 163,
+    "contours": 5,
+    "area_ratio": 0.6882
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.1.jpg",
+    "focus_found": true,
+    "otsu_threshold": 132,
+    "contours": 7,
+    "area_ratio": 0.4843
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.10.jpg",
+    "focus_found": true,
+    "otsu_threshold": 130,
+    "contours": 2,
+    "area_ratio": 0.8235
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.11.jpg",
+    "focus_found": true,
+    "otsu_threshold": 164,
+    "contours": 4,
+    "area_ratio": 0.6699
+  },
+  {
+    "file": "dataset/val/healthy/healthy_val.12.jpg",
+    "focus_found": true,
+    "otsu_threshold": 118,
+    "contours": 6,
+    "area_ratio": 0.6784
+  }
+]

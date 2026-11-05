@@ -1,0 +1,51 @@
+{
+  "model": "artifacts/beans_resnet18_full",
+  "data": "dataset",
+  "classes": [
+    "angular_leaf_spot",
+    "bean_rust",
+    "healthy"
+  ],
+  "results": {
+    "train": {
+      "accuracy": 0.9981,
+      "confusion_matrix": [
+        [
+          344,
+          1,
+          0
+        ],
+        [
+          0,
+          348,
+          0
+        ],
+        [
+          0,
+          1,
+          340
+        ]
+      ]
+    },
+    "val": {
+      "accuracy": 0.9925,
+      "confusion_matrix": [
+        [
+          44,
+          0,
+          0
+        ],
+        [
+          0,
+          44,
+          1
+        ],
+        [
+          0,
+          0,
+          44
+        ]
+      ]
+    }
+  }
+}

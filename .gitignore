@@ -76,3 +76,7 @@ media/jobs/*
    !reports/**/*.csv
    !reports/**/*.json
    !reports/**/*.png
+# 보고서 증빙·측정 원본은 업로드
+!reports/**/*.csv
+!reports/**/*.json
+!reports/**/*.png

@@ -1,0 +1,37 @@
+[
+  {
+    "file": "dataset/val/angular_leaf_spot/angular_leaf_spot_val.0.jpg",
+    "focus_found": true,
+    "otsu_threshold": 178,
+    "contours": 17,
+    "area_ratio": 0.4484
+  },
+  {
+    "file": "dataset/val/angular_leaf_spot/angular_leaf_spot_val.1.jpg",
+    "focus_found": true,
+    "otsu_threshold": 141,
+    "contours": 15,
+    "area_ratio": 0.3635
+  },
+  {
+    "file": "dataset/val/angular_leaf_spot/angular_leaf_spot_val.10.jpg",
+    "focus_found": true,
+    "otsu_threshold": 168,
+    "contours": 3,
+    "area_ratio": 0.6426
+  },
+  {
+    "file": "dataset/val/angular_leaf_spot/angular_leaf_spot_val.11.jpg",
+    "focus_found": true,
+    "otsu_threshold": 141,
+    "contours": 7,
+    "area_ratio": 0.6252
+  },
+  {
+    "file": "dataset/val/angular_leaf_spot/angular_leaf_spot_val.12.jpg",
+    "focus_found": true,
+    "otsu_threshold": 116,
+    "contours": 6,
+    "area_ratio": 0.5889
+  }
+]

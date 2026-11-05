@@ -1,0 +1,104 @@
+{
+  "method": "마스크 + HSV 색상 특징 + RandomForest",
+  "features_file": "reports/data/color_features_leaf.csv",
+  "dropped_features": [
+    "focus_sharpness_mean",
+    "mask_area_ratio"
+  ],
+  "status": "구현·측정 완료 (Validation 기준, Test 미사용)",
+  "train_count": 1034,
+  "val_count": 133,
+  "feature_count": 22,
+  "focus_detect_rate": {
+    "train": 1.0,
+    "val": 1.0
+  },
+  "val_accuracy": 0.8045,
+  "cnn_val_accuracy_reference": null,
+  "classes": [
+    "angular_leaf_spot",
+    "bean_rust",
+    "healthy"
+  ],
+  "confusion_matrix": [
+    [
+      34,
+      8,
+      2
+    ],
+    [
+      9,
+      34,
+      2
+    ],
+    [
+      0,
+      5,
+      39
+    ]
+  ],
+  "per_class": {
+    "angular_leaf_spot": {
+      "precision": 0.7907,
+      "recall": 0.7727,
+      "f1-score": 0.7816
+    },
+    "bean_rust": {
+      "precision": 0.7234,
+      "recall": 0.7556,
+      "f1-score": 0.7391
+    },
+    "healthy": {
+      "precision": 0.907,
+      "recall": 0.8864,
+      "f1-score": 0.8966
+    }
+  },
+  "top_features": [
+    {
+      "name": "hue_bin_01",
+      "importance": 0.0958
+    },
+    {
+      "name": "ratio_green",
+      "importance": 0.0898
+    },
+    {
+      "name": "ratio_yellow",
+      "importance": 0.0718
+    },
+    {
+      "name": "ratio_brown_red",
+      "importance": 0.0711
+    },
+    {
+      "name": "s_mean",
+      "importance": 0.0705
+    },
+    {
+      "name": "v_mean",
+      "importance": 0.0704
+    },
+    {
+      "name": "ratio_low_saturation",
+      "importance": 0.0668
+    },
+    {
+      "name": "hue_bin_02",
+      "importance": 0.054
+    },
+    {
+      "name": "hue_bin_03",
+      "importance": 0.0531
+    },
+    {
+      "name": "h_mean",
+      "importance": 0.0528
+    }
+  ],
+  "params": {
+    "n_estimators": 300,
+    "random_state": 42,
+    "class_weight": "balanced"
+  }
+}

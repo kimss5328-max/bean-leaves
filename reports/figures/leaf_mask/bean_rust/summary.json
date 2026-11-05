@@ -1,0 +1,122 @@
+[
+  {
+    "file": "dataset/val/bean_rust/bean_rust_val.0.jpg",
+    "method": "grabcut",
+    "otsu_a": 127,
+    "fallback_full": false,
+    "area_ratio": 0.2387,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/bean_rust/bean_rust_val.1.jpg",
+    "method": "grabcut",
+    "otsu_a": 115,
+    "fallback_full": false,
+    "area_ratio": 0.4815,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/bean_rust/bean_rust_val.10.jpg",
+    "method": "grabcut",
+    "otsu_a": 126,
+    "fallback_full": false,
+    "area_ratio": 0.5221,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/bean_rust/bean_rust_val.11.jpg",
+    "method": "grabcut",
+    "otsu_a": 119,
+    "fallback_full": false,
+    "area_ratio": 0.3347,
+    "leaves": 2
+  },
+  {
+    "file": "dataset/val/bean_rust/bean_rust_val.12.jpg",
+    "method": "grabcut",
+    "otsu_a": 122,
+    "fallback_full": false,
+    "area_ratio": 0.2778,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/bean_rust/bean_rust_val.13.jpg",
+    "method": "grabcut",
+    "otsu_a": 131,
+    "fallback_full": false,
+    "area_ratio": 0.2799,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/bean_rust/bean_rust_val.14.jpg",
+    "method": "grabcut",
+    "otsu_a": 125,
+    "fallback_full": false,
+    "area_ratio": 0.3794,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/bean_rust/bean_rust_val.15.jpg",
+    "method": "grabcut",
+    "otsu_a": 116,
+    "fallback_full": false,
+    "area_ratio": 0.4265,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/bean_rust/bean_rust_val.16.jpg",
+    "method": "grabcut",
+    "otsu_a": 109,
+    "fallback_full": false,
+    "area_ratio": 0.2845,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/bean_rust/bean_rust_val.17.jpg",
+    "method": "grabcut",
+    "otsu_a": 122,
+    "fallback_full": false,
+    "area_ratio": 0.2955,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/bean_rust/bean_rust_val.18.jpg",
+    "method": "grabcut",
+    "otsu_a": 123,
+    "fallback_full": false,
+    "area_ratio": 0.2759,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/bean_rust/bean_rust_val.19.jpg",
+    "method": "grabcut",
+    "otsu_a": 129,
+    "fallback_full": false,
+    "area_ratio": 0.2201,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/bean_rust/bean_rust_val.2.jpg",
+    "method": "grabcut",
+    "otsu_a": 132,
+    "fallback_full": false,
+    "area_ratio": 0.2787,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/bean_rust/bean_rust_val.20.jpg",
+    "method": "grabcut",
+    "otsu_a": 114,
+    "fallback_full": false,
+    "area_ratio": 0.6654,
+    "leaves": 1
+  },
+  {
+    "file": "dataset/val/bean_rust/bean_rust_val.21.jpg",
+    "method": "grabcut",
+    "otsu_a": 130,
+    "fallback_full": false,
+    "area_ratio": 0.2566,
+    "leaves": 1
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "repeat": 5,
+  "poll_interval_s": 0.2,
+  "cache_flushed_before": true,
+  "warmup_excluded": true,
+  "image_source": "dataset/test",
+  "summary_median_ms": {
+    "sync_MISS": {
+      "http_ms": 26.79,
+      "final_ms": 26.79,
+      "inference_ms": 20.4
+    },
+    "sync_HIT": {
+      "http_ms": 2.07,
+      "final_ms": 2.07,
+      "inference_ms": null
+    },
+    "async_MISS": {
+      "http_ms": 9.01,
+      "final_ms": 220.82,
+      "inference_ms": 17.78
+    },
+    "async_HIT": {
+      "http_ms": 9.2,
+      "final_ms": 220.39,
+      "inference_ms": null
+    }
+  },
+  "unexpected_cache_hit_rows": 0
+}

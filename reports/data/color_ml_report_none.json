@@ -1,0 +1,101 @@
+{
+  "method": "마스크 + HSV 색상 특징 + RandomForest",
+  "features_file": "reports/data/color_features_none.csv",
+  "dropped_features": [],
+  "status": "구현·측정 완료 (Validation 기준, Test 미사용)",
+  "train_count": 1034,
+  "val_count": 133,
+  "feature_count": 24,
+  "focus_detect_rate": {
+    "train": 1.0,
+    "val": 1.0
+  },
+  "val_accuracy": 0.8271,
+  "cnn_val_accuracy_reference": null,
+  "classes": [
+    "angular_leaf_spot",
+    "bean_rust",
+    "healthy"
+  ],
+  "confusion_matrix": [
+    [
+      34,
+      4,
+      6
+    ],
+    [
+      7,
+      37,
+      1
+    ],
+    [
+      1,
+      4,
+      39
+    ]
+  ],
+  "per_class": {
+    "angular_leaf_spot": {
+      "precision": 0.8095,
+      "recall": 0.7727,
+      "f1-score": 0.7907
+    },
+    "bean_rust": {
+      "precision": 0.8222,
+      "recall": 0.8222,
+      "f1-score": 0.8222
+    },
+    "healthy": {
+      "precision": 0.8478,
+      "recall": 0.8864,
+      "f1-score": 0.8667
+    }
+  },
+  "top_features": [
+    {
+      "name": "ratio_green",
+      "importance": 0.0766
+    },
+    {
+      "name": "h_mean",
+      "importance": 0.07
+    },
+    {
+      "name": "hue_bin_01",
+      "importance": 0.0689
+    },
+    {
+      "name": "hue_bin_03",
+      "importance": 0.0684
+    },
+    {
+      "name": "v_mean",
+      "importance": 0.0666
+    },
+    {
+      "name": "ratio_yellow",
+      "importance": 0.063
+    },
+    {
+      "name": "ratio_brown_red",
+      "importance": 0.0569
+    },
+    {
+      "name": "focus_sharpness_mean",
+      "importance": 0.0511
+    },
+    {
+      "name": "hue_bin_00",
+      "importance": 0.0472
+    },
+    {
+      "name": "ratio_low_saturation",
+      "importance": 0.046
+    }
+  ],
+  "params": {
+    "n_estimators": 300,
+    "random_state": 42,
+    "class_weight": "balanced"
+  }
+}
