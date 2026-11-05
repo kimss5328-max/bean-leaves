@@ -90,7 +90,7 @@ print(all(torch.equal(a[k],b[k]) for k in a if 'num_batches' not in k and 'runni
 | Best Validation Accuracy | 0.8421 (112/133) | **0.9549 (127/133)** |
 | Best 모델 저장 epoch | 3 | **27** |
 | 마지막 epoch Train Loss | 0.7247 | 0.3716 |
-| Test Accuracy | **미측정** | **미측정** |
+| Test Accuracy | 미측정 | **0.8984 (115/128)** — 3-5절 |
 
 - 실행 B는 27·29 epoch에서 같은 최고값(0.9549)을 기록하였다. 제공 코드는 이전 최고값보다 **클 때만** 저장하므로 27 epoch 모델이 저장되었다.
 
@@ -148,6 +148,49 @@ print(all(torch.equal(a[k],b[k]) for k in a if 'num_batches' not in k and 'runni
 
 ---
 
+### 3-5. Test 세트 최종 평가 (1회)
+
+서비스 모델을 확정한 **뒤에** Test 128장으로 한 번만 평가하였다. Test는 학습·epoch 선택·모델 선택에 사용하지 않았으며, 결과를 보고 모델이나 설정을 바꾸지 않았다.
+
+```bash
+python -m tools.cnn_predict --model artifacts/beans_resnet18 --splits test --output reports/data/cnn_probs_test.csv
+```
+
+| 정답 \ 예측 | angular_leaf_spot | bean_rust | healthy |
+|---|---:|---:|---:|
+| **angular_leaf_spot** (43) | **39** | 3 | 1 |
+| **bean_rust** (43) | 6 | **37** | 0 |
+| **healthy** (42) | 1 | 2 | **39** |
+
+| 지표 | Validation | **Test** |
+|---|---:|---:|
+| Accuracy | 0.9549 (127/133) | **0.8984 (115/128)** |
+| 정상 vs 질병 2분류 | 0.977 | 0.969 (124/128) |
+| 질병 종류 구분 (질병 이미지 중) | 0.955 | 0.884 (76/86) |
+| 반점병 ↔ 녹병 혼동 | 3 | **9** |
+| 질병 → 정상 | 1 | 1 |
+| 정상 → 질병 | 2 | 3 |
+
+**클래스별 지표 (Test, 혼동행렬에서 계산)**
+
+| 클래스 | Precision | Recall | F1 |
+|---|---:|---:|---:|
+| angular_leaf_spot | 0.848 (39/46) | 0.907 (39/43) | 0.876 |
+| bean_rust | 0.881 (37/42) | 0.860 (37/43) | 0.871 |
+| healthy | 0.975 (39/40) | 0.929 (39/42) | 0.951 |
+| **Macro 평균** | | | **0.899** |
+
+**해석**
+1. **Test 정확도는 Validation보다 5.65%p 낮다** (0.9549 → 0.8984). Validation으로 최고 epoch을 골랐기 때문에 Validation 정확도가 낙관적이었다는 앞선 한계(6장 2번)가 실제로 확인되었다. 30 epoch 학습 중 Validation이 0.91~0.95 사이에서 오르내렸던 점도 같은 방향이다.
+2. **오답 13건 중 9건이 반점병 ↔ 녹병 혼동**이다. 특히 녹병을 반점병으로 판정한 경우가 6건으로, Validation에서는 0건이었던 유형이다.
+3. **정상 vs 질병 구분은 Test에서도 0.969로 유지**되었다. 질병을 정상으로 놓친 경우는 1건이다.
+4. 오답 13건 중 10건은 확신도 0.65 미만이었고, 3건(0.96, 0.91, 0.80)은 높은 확신도로 틀렸다. 낮은 확신도를 `확인 필요`로 돌리는 규칙은 가능성이 있지만, **기준값을 Test로 정하면 Test 누출이 되므로** 적용하지 않았다.
+5. 오답 이미지와 잎 마스크: `reports/figures/errors/test_test/` (`tools/extract_errors.py`)
+
+증빙: `reports/data/cnn_probs_test.csv`, `reports/data/cnn_probs_test.json`, `evidence/test_eval.png`
+
+---
+
 ## 4. 생성 파일 확인
 
 | 파일 | 실행 A (`_e3`) | 실행 B (서비스 경로 `artifacts/beans_resnet18`) |
@@ -193,7 +236,7 @@ echo "MODEL_PATH=artifacts/beans_resnet18" > .env
 **한계**
 1. **재현성:** 동일 seed(42)에서도 3 epoch 시점 정확도가 실행 A 0.8421, 실행 B 0.7669로 달랐다. 학습이 GPU(CUDA)에서 실행되었고, 제공 코드는 `torch.manual_seed`만 고정할 뿐 cuDNN 연산의 비결정성(`torch.backends.cudnn.deterministic`)은 고정하지 않으므로 이것이 원인으로 추정된다 (미검증). 두 결과의 차이를 **epoch 증가만의 효과로 단정하지 않는다.**
 2. **Validation 선택 편향:** Validation으로 최고 epoch을 골랐으므로 0.9549는 낙관적일 수 있다.
-3. **Test 미측정:** 제공 코드에 Test 평가 절차가 없다.
+3. **Validation과 Test의 차이:** Test 정확도(0.8984)가 Validation(0.9549)보다 5.65%p 낮다. Validation 기준 epoch 선택의 낙관 편향이 확인되었다 (3-5절).
 4. **학습 범위:** Backbone 고정. Full Fine-tuning은 수행하지 않았다.
 
 **추가 실험** (선택, 별도 보고서)

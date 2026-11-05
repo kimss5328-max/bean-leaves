@@ -6,7 +6,7 @@
 | 항목 | 결과 |
 |---|---|
 | 서비스 모델 | Head-only Fine-tuning 30 epoch — Validation Accuracy **0.9549** (127/133) |
-| Test Accuracy | 미측정 |
+| Test Accuracy (1회 평가) | **0.8984** (115/128), Macro F1 0.899 |
 | 선택 실험 최고값 | Full Fine-tuning 10 epoch — Validation 0.9925 (Best), 0.967 (안정 구간 평균) |
 
 ---
@@ -122,10 +122,12 @@ python -m tools.measure_timings --repeat 5 # 실환경 성능 측정 (서버·Wo
 | `reports/10_실험_CNN_잎마스크_융합.md` | 선택 실험: 잎 마스크 CNN, CNN+색상 융합, Full Fine-tuning |
 | `reports/data/` | 측정 원본 (`timings.csv`, `cnn_probs_*.csv`, `color_features_*.csv`, 각종 리포트 JSON) |
 | `reports/evidence/` | 실행 캡처, `training_report` 백업 |
-| `reports/figures/` | 마스크 시각화, 오답 이미지 |
+| `reports/figures/` | 마스크 시각화, 오답 이미지 (`errors/test_test/` = Test 오답 13장) |
 | `artifacts/beans_resnet18/training_report.json` | 서비스 모델 학습 기록 |
 | `tools/` | 선택 실험·측정 스크립트 (제공 코드 아님) |
 | `training/finetune_fusion.py` | 원본 `finetune.py` + 융합 평가 (선택 실험용, 원본 코드 구역은 동일) |
+
+> **Git 제외:** `*.csv`, `*.json`, 이미지(`*.png` 등)는 `.gitignore`로 제외하였다. 따라서 `reports/data/`, `reports/evidence/`, `reports/figures/`의 링크는 GitHub에서 열리지 않으며, 압축 파일로 별도 제출한다.
 
 ## 9. 제공 코드 사용 원칙
 
